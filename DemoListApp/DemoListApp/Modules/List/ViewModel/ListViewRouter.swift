@@ -11,10 +11,8 @@ import SwiftUI
 class ListViewRouter: Router {
     weak var controller: UIViewController?
     
-    func navigateToDetailView(customer: Customer, onSave: @escaping (Customer) -> Void) {
-        let createView = DetailsView(customer: customer, onSave: onSave)
-        let createController = UIHostingController(rootView: createView)
-        createController.title = "Details"
+    func navigateToDetailView(onSave: @escaping (Customer) -> Void) {
+        let createController = CustomerDetailsFactory.makeView(onSave: onSave)
         controller?.show(createController, sender: nil)
     }
 }

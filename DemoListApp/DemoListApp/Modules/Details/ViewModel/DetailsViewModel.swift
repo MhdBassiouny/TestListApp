@@ -16,8 +16,13 @@ class DetailsViewModel: FormViewModel {
     var firstNameEditing: Bool? = false
     var lastNameEditing: Bool? = false
     
-    init(customer: Customer) {
+    init() {
+        guard let customer = CustomerSharedRepository.shared.get() else {
+            self.customer = Customer()
+            return
+        }
         self.customer = customer
+        CustomerSharedRepository.shared.clear()
     }
     
     func loadData() async {

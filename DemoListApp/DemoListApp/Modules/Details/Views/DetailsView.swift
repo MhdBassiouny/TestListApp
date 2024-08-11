@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct DetailsView: View {
-    @State var viewModel: DetailsViewModel
+    @State var viewModel = DetailsViewModel()
     @FocusState private var focusField: FormInputFields?
     @Environment(\.dismiss) private var dismiss
     private let onSave: (Customer) -> Void
     
-    init(customer: Customer, onSave: @escaping (Customer) -> Void) {
-        self.viewModel = DetailsViewModel(customer: customer)
+    init(onSave: @escaping (Customer) -> Void) {
         self.onSave = onSave
     }
     
@@ -62,5 +61,5 @@ struct DetailsView: View {
 }
 
 #Preview {
-    DetailsView(customer: Customer(firstName: "test", lastName: "test", email: "test"), onSave: { _ in })
+    DetailsView(onSave: { _ in })
 }

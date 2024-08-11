@@ -17,11 +17,8 @@ class ViewController: UIViewController {
     }
 
     @objc private func navigateToSwiftUI() {
-        let viewModel = ListViewViewModel(repository: ListViewStaticRepository())
-        let view = UIHostingController(rootView: ListView(viewModel: viewModel))
-        viewModel.router.controller = view
-        view.title = viewModel.navigationBarTitle
-        navigationController?.pushViewController(view, animated: true)
+        let customerListView = CustomerListFactory.makeView()
+        navigationController?.pushViewController(customerListView, animated: true)
     }
 }
 

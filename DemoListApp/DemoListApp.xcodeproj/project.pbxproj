@@ -26,6 +26,9 @@
 		F6A3BE3C2C56EB5C00BAFED5 /* ListViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3BE3B2C56EB5C00BAFED5 /* ListViewRouter.swift */; };
 		F6A3BE402C570D8F00BAFED5 /* ListViewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3BE3F2C570D8F00BAFED5 /* ListViewRepository.swift */; };
 		F6A3BE442C57123B00BAFED5 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3BE432C57123B00BAFED5 /* DetailsView.swift */; };
+		F6B81DFC2C687F2500D22388 /* CustomerDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B81DFB2C687F2500D22388 /* CustomerDetailsFactory.swift */; };
+		F6B81DFE2C6883AC00D22388 /* CustomerListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B81DFD2C6883AC00D22388 /* CustomerListFactory.swift */; };
+		F6B81E012C688D1600D22388 /* CustomerSharedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B81E002C688D1600D22388 /* CustomerSharedRepository.swift */; };
 		F6E27FDB2C597D65009C0D86 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E27FDA2C597D65009C0D86 /* Customer.swift */; };
 		F6E27FDD2C598DDA009C0D86 /* FormInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E27FDC2C598DDA009C0D86 /* FormInputField.swift */; };
 		F6E27FE02C598F96009C0D86 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E27FDF2C598F96009C0D86 /* String+Extension.swift */; };
@@ -54,6 +57,9 @@
 		F6A3BE3B2C56EB5C00BAFED5 /* ListViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRouter.swift; sourceTree = "<group>"; };
 		F6A3BE3F2C570D8F00BAFED5 /* ListViewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRepository.swift; sourceTree = "<group>"; };
 		F6A3BE432C57123B00BAFED5 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		F6B81DFB2C687F2500D22388 /* CustomerDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsFactory.swift; sourceTree = "<group>"; };
+		F6B81DFD2C6883AC00D22388 /* CustomerListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListFactory.swift; sourceTree = "<group>"; };
+		F6B81E002C688D1600D22388 /* CustomerSharedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSharedRepository.swift; sourceTree = "<group>"; };
 		F6E27FDA2C597D65009C0D86 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		F6E27FDC2C598DDA009C0D86 /* FormInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputField.swift; sourceTree = "<group>"; };
 		F6E27FDF2C598F96009C0D86 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 		F6A3BE092C55924000BAFED5 /* DemoListApp */ = {
 			isa = PBXGroup;
 			children = (
+				F6B81DFF2C688D0300D22388 /* CustomerSharedRepository */,
 				F6E27FD92C597D50009C0D86 /* Models */,
 				F6A3BE332C56E1FB00BAFED5 /* Modules */,
 				F6A3BE302C56E17100BAFED5 /* Common */,
@@ -173,6 +180,7 @@
 		F6A3BE352C56E29E00BAFED5 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F6B81DFD2C6883AC00D22388 /* CustomerListFactory.swift */,
 				F6A3BE3D2C56EC3900BAFED5 /* Views */,
 				F6A3BE3E2C56EC4400BAFED5 /* ViewModel */,
 			);
@@ -182,6 +190,7 @@
 		F6A3BE362C56E2A400BAFED5 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				F6B81DFB2C687F2500D22388 /* CustomerDetailsFactory.swift */,
 				F6A3BE412C5711DC00BAFED5 /* Views */,
 				F6A3BE422C5711E700BAFED5 /* ViewModel */,
 			);
@@ -220,6 +229,14 @@
 				F6E27FE12C59919A009C0D86 /* DetailsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6B81DFF2C688D0300D22388 /* CustomerSharedRepository */ = {
+			isa = PBXGroup;
+			children = (
+				F6B81E002C688D1600D22388 /* CustomerSharedRepository.swift */,
+			);
+			path = CustomerSharedRepository;
 			sourceTree = "<group>";
 		};
 		F6E27FD92C597D50009C0D86 /* Models */ = {
@@ -311,6 +328,7 @@
 			files = (
 				F6A3BE322C56E19500BAFED5 /* Router.swift in Sources */,
 				F6E27FE22C59919A009C0D86 /* DetailsViewModel.swift in Sources */,
+				F6B81DFE2C6883AC00D22388 /* CustomerListFactory.swift in Sources */,
 				F6A3BE262C5593DC00BAFED5 /* KeyboardToolBar.swift in Sources */,
 				F6A3BE2D2C5593EA00BAFED5 /* CustomListView.swift in Sources */,
 				F6A3BE3C2C56EB5C00BAFED5 /* ListViewRouter.swift in Sources */,
@@ -321,7 +339,9 @@
 				F6A3BE0B2C55924000BAFED5 /* AppDelegate.swift in Sources */,
 				F6A3BE2F2C55955800BAFED5 /* CustomeProgressView.swift in Sources */,
 				F6E27FE02C598F96009C0D86 /* String+Extension.swift in Sources */,
+				F6B81DFC2C687F2500D22388 /* CustomerDetailsFactory.swift in Sources */,
 				F6A3BE382C56E34E00BAFED5 /* ListView.swift in Sources */,
+				F6B81E012C688D1600D22388 /* CustomerSharedRepository.swift in Sources */,
 				F6E27FDB2C597D65009C0D86 /* Customer.swift in Sources */,
 				F66CAC972C59AACF007BD81F /* ValidationPreferennceKey.swift in Sources */,
 				F6A3BE3A2C56E37900BAFED5 /* ListViewViewModel.swift in Sources */,
