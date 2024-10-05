@@ -20,17 +20,15 @@ final class ListViewViewModel: ListViewModel {
         self.repository = repository
     }
     
-    func loadList() {
+    func loadList() async {
         guard state == .normal else { return }
-        Task {
-            do {
-                let list = try await repository.getListData(pageOffset: pageOffset)
-                pageOffset += repository.pageSize
-                listData += list
-                state = .loadedAll
-            } catch {
-                state = .loadedAll
-            }
+        do {
+            let list = try await repository.getListData(pageOffset: pageOffset)
+            pageOffset += repository.pageSize
+            listData += list
+            state = .loadedAll
+        } catch {
+            state = .loadedAll
         }
     }
     

@@ -14,7 +14,7 @@ protocol ListViewModel: Observable, AnyObject {
     var pageOffset: Int { get set }
     var navigationBarTitle: String { get }
     
-    func loadList()
+    func loadList() async
 }
 
 extension ListViewModel {
@@ -44,8 +44,8 @@ struct CustomListView<ViewModel: ListViewModel, Content: View>: View {
             switch viewModel.state {
             case .normal:
                 Color.clear
-                    .onAppear {
-                        viewModel.loadList()
+                    .task {
+                        await viewModel.loadList()
                     }
             case .isLoading:
                 CustomProgressView(scaleEffect: 2)
@@ -55,7 +55,7 @@ struct CustomListView<ViewModel: ListViewModel, Content: View>: View {
         }
         .refreshable {
             viewModel.resetView()
-            viewModel.loadList()
+            await viewModel.loadList()
         }
     }
 }
