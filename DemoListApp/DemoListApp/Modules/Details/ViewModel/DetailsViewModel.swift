@@ -25,10 +25,6 @@ class DetailsViewModel: FormViewModel {
         CustomerSharedRepository.shared.clear()
     }
     
-    func loadData() async {
-        
-    }
-    
     func validate() -> Bool {
         return validationFields.values.allSatisfy { $0 }
     }

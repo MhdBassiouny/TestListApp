@@ -22,10 +22,17 @@ final class DemoListAppListScreenTests: XCTestCase {
         viewModel = nil
     }
     
+    func test_initial_State() async {
+        XCTAssertEqual(viewModel.listData.count, 0)
+        XCTAssertEqual(viewModel.state, .normal)
+    }
+    
     func test_loading_list_data() async {
         await viewModel.loadList()
         XCTAssertTrue(viewModel.listData.count > 0)
         XCTAssertEqual(viewModel.state, .loadedAll)
+        XCTAssertTrue(viewModel.pageOffset > 0)
+
     }
 
 
@@ -52,6 +59,6 @@ final class DemoListAppDetailsScreenTests: XCTestCase {
         CustomerSharedRepository.shared.set(customer: Customer(firstName: "Test", lastName: "LastName", email: "email@domain.com"))
         viewModel = DetailsViewModel()
         XCTAssertEqual(viewModel.customer.firstName, "Test")
-
+        XCTAssertNil(CustomerSharedRepository.shared.get())
     }
 }

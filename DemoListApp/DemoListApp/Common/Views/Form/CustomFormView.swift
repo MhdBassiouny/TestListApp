@@ -11,8 +11,6 @@ protocol FormViewModel: Observable, AnyObject {
     associatedtype T: InputField
     var fields: [T] { get set }
     var formState: FormStatus { get set }
-    
-    func loadData() async
 }
 
 enum FormStatus: Equatable {
@@ -51,9 +49,6 @@ struct CustomFormView<Content: View, U: FormViewModel, T: InputField>: View {
                 EmptyView()
             case .isLoading:
                 CustomProgressView(scaleEffect: 2)
-                    .task {
-                        await viewModel.loadData()
-                    }
             case .isSubmitting:
                 CustomProgressView(scaleEffect: 2)
             }
