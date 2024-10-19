@@ -35,14 +35,14 @@ final class ListViewViewModel: ListViewModel {
     func navigateToEdit(customer: Customer) {
         guard let index = listData.firstIndex(of: customer) else { return }
         CustomerSharedRepository.shared.set(customer: customer)
-        router.navigateToDetailView() { text in
-            self.listData[index] = text
+        router.navigateToDetailView() { [weak self] text in
+            self?.listData[index] = text
         }
     }
     
     func navigateToCreate() {
-        router.navigateToDetailView() { customer in
-            self.listData.insert(customer, at: 0)
+        router.navigateToDetailView() { [weak self] customer in
+            self?.listData.insert(customer, at: 0)
         }
     }
 }
